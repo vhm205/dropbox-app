@@ -1,0 +1,33 @@
+{
+  "name": "test",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www",
+    "test": "nodemon test.js"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "bluebird": "^3.7.2",
+    "chalk": "^3.0.0",
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "dropbox": "^4.0.30",
+    "express": "~4.16.1",
+    "faker": "^4.1.0",
+    "http-errors": "~1.6.3",
+    "isomorphic-fetch": "^2.2.1",
+    "moment": "^2.24.0",
+    "mongoose": "^5.9.1",
+    "mongoose-seed": "^0.6.0",
+    "morgan": "~1.9.1",
+    "portscanner": "^2.2.0",
+    "pug": "2.0.0-beta11",
+    "puppeteer": "^2.1.1",
+    "redis": "^3.0.2",
+    "request": "^2.88.2",
+    "response-time": "^2.3.2"
+  }
+}
