@@ -52,7 +52,7 @@ const ToolBar = memo(() => {
 		if(localStorage.getItem('access-token')){
 			localStorage.removeItem('access-token')
 		}
-		window.location.reload()
+		window.location.href = `${window.location.protocol}//${window.location.host}`
 	}
 
 	const checkSpaceUsage = async () => {

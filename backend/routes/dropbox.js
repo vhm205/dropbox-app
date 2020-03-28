@@ -1,12 +1,15 @@
-const fetch = require('isomorphic-fetch');
+const fetch = require('isomorphic-fetch')
+const qs = require('querystring')
+const axios = require('axios')
 const fs = require('fs')
+const url = require('url')
+const uuid = require('uuid')
 const router = require('express').Router()
 const Dropbox = require('dropbox').Dropbox
 
 let dbx = null;
-// 'bFlk_VI6NTAAAAAAAAAADUcmyb0ibq7GXNhakyJ27G4S_P3MKIKmHy44WxyjC8Md'
-// 'vK_LB7g6hmAAAAAAAAAAWy5kJtpu2xKvtdyhKWgc3cgMg1AG1RwXMOkJUw8IbZEg' 
 
+const fullurl = 'http://localhost:1002'; 
 const pathDownloads = './public/downloads'
 
 const writeFileBinary = (file, des) => {
@@ -35,6 +38,23 @@ router.get('/access-token', (req, res) => {
 	} catch (error) {
 		return res.status(500).json(error)
 	}	
+})
+
+router.get('/auth', (req, res) => {
+	const csrfCode = uuid.v4()
+	const options = {
+		protocol: 'https',
+		hostname: 'www.dropbox.com',
+		pathname: 'oauth2/authorize',
+		method: 'GET',
+		query: {
+			client_id: 'w3lyl35xxwokx39',
+			response_type: 'code',
+			state: csrfCode,
+			redirect_uri: `http://localhost:3000`
+		}
+	}
+	res.redirect(url.format(options))
 })
 
 router.post('/del', async (req, res) => {
