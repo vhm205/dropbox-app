@@ -26,7 +26,7 @@
     "portscanner": "^2.2.0",
     "pug": "2.0.0-beta11",
     "puppeteer": "^2.1.1",
-    "redis": "^3.0.2",
+    "redis": "^3.1.1",
     "request": "^2.88.2",
     "response-time": "^2.3.2",
     "uuid": "^7.0.2"
